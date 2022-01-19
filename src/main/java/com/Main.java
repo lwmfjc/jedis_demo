@@ -10,12 +10,7 @@ import java.util.Set;
 
 public class Main {
     public static void main(String[] args) {
-        //设置密码
-        DefaultJedisClientConfig.Builder builder = DefaultJedisClientConfig.builder()
-                .password("hello.lwm");
-        DefaultJedisClientConfig config = builder.build();
-
-        Jedis jedis = new Jedis("192.168.200.200", 6379, config);
+        Jedis jedis = MyJedis.getInstance();
         //ping
         String value = jedis.ping();
         System.out.println(value);
